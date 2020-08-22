@@ -2,10 +2,14 @@
   "name": "domain-auth",
   "version": "0.0.1",
   "description": "",
-  "main": "dist/auth.js",
+  "main": "lib/auth.js",
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
     "test": "mocha",
-    "build": "bpkg --browser --plugin [ uglify-es --toplevel ] --name auth --output dist/auth.js lib/auth.js"
+    "build-web": "bpkg --name=auth --browser --plugin [ uglify-es --toplevel ] -u --output=dist/web.js lib/auth.js",
+    "build-node": "bpkg --name=auth -n -l --output=dist/node.js lib/auth.js"
   },
   "keywords": [
     "hns",
